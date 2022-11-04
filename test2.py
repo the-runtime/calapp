@@ -96,6 +96,13 @@ def oauth2callback(state:str, code:str, scope:str, req:Request):
   return RedirectResponse('/')
 
 
+def credentials_to_dict(credentials):
+  return {'token': credentials.token,
+          'refresh_token': credentials.refresh_token,
+          'token_uri': credentials.token_uri,
+          'client_id': credentials.client_id,
+          'client_secret': credentials.client_secret,
+          'scopes': credentials.scopes}
 
 
 
