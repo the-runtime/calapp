@@ -82,7 +82,7 @@ def oauth2callback(state:str, code:str, scope:str, req:Request):
   flow.redirect_uri = "https://theruntime.software/auth"
 
   # Use the authorization server's response to fetch the OAuth 2.0 tokens.
-  authorization_response = req.url
+  authorization_response = str(req.url)
   flow.fetch_token(authorization_response=authorization_response)
 
   # Store credentials in the session.
