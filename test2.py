@@ -3,9 +3,14 @@ from fastapi import FastAPI,Request
 from starlette.middleware.sessions import SessionMiddleware
 import requests
 from fastapi.responses import RedirectResponse
+
+from google.auth.transport.requests import Request
 import google.oauth2.credentials
 import google_auth_oauthlib.flow
-import googleapiclient.discovery
+import googleapiclient.discover
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
 
 
 
