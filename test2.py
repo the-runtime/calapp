@@ -83,7 +83,8 @@ def oauth2callback(state:str, code:str, scope:str, req:Request):
 
   # Use the authorization server's response to fetch the OAuth 2.0 tokens.
   print(str(req.url))
-  authorization_response = str(req.url)
+  tem_auth_res = str(req.url)
+  authorization_response = tem_auth_res[:4]+"s"+tem_auth_res[4:]
   flow.fetch_token(authorization_response=authorization_response)
 
   # Store credentials in the session.
